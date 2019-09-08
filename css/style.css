@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css?family=Livvic:400,900&display=swap');
+
+* , *:after , *:before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+:root {
+    --orangeColor: #3578E5;
+    --blackColor: #1a1a1a;
+    --subColor: #ac1212;
+    --whiteColor: #fff;
+}
+
+body {
+    font-family: 'Livvic', sans-serif;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: 
+        linear-gradient(rgba(66, 103, 178, 0.9) 0%, rgba(242, 243, 245, 0.8) 100%), 
+        url(../images/jesse-brack-169152.jpg) 
+        center 
+        center 
+        fixed 
+        no-repeat;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 99;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+.wrapper .title {
+    font-size: 28px;
+    background: var(--orangeColor);
+    padding: 10px 15px;
+    color: var(--whiteColor);
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 1px 1px 6px var(--blackColor);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.wrapper .title .youtube-link {
+    position: absolute;
+    text-decoration: none;
+    background: #ee0707;
+    color: var(--whiteColor);
+    padding: 10px 20px;
+    right: 0;
+    bottom: 0;
+    font-size: 17px;
+    border-radius: 10px 0 10px 0
+}
+
+.wrapper .subtitle {
+    background: var(--subColor);
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    counter-reset: title; 
+}
+
+.wrapper .subtitle span {
+    font-weight: bold;
+    letter-spacing: -5px;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.coursesTrack {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.coursesTrack .course-item {
+    background: var(--whiteColor);;
+    padding: 30px 10px 50px 35px;
+    position: relative;
+    width: 48%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.coursesTrack .course-item:before {
+    position: absolute;
+    counter-increment: title;
+    content: counter(title);
+    left: 0;
+    top: 50%;
+    transform: translate(-50% , -50%);
+    background: var(--whiteColor);;
+    border-radius: 50%;
+    color:var(--subColor);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    line-height: 40px;
+    box-shadow: 1px 1px 5px #ccc;
+    font-size: 20px;
+}
+
+.coursesTrack .course-item .course-title h2 {
+    font-weight: 700;
+    font-size: 25px;
+    color: var(--orangeColor);
+}
+
+.coursesTrack .course-item .breif {
+    color: #a1a1a1;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.coursesTrack .course-item .course-link  {
+    background: #373839;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.5s;
+}
+
+.coursesTrack .course-item .course-link:hover {
+    background: var(--orangeColor);
+}
+
+@media(max-width:768px) {
+    .wrapper .title {
+        font-size: 20px;
+    }
+    .wrapper .subtitle {
+        font-size: 17px;
+    }
+    .coursesTrack {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+    
+    .coursesTrack .course-item {
+        width: 100%;
+    }
+    .coursesTrack .course-item .course-title h2 {font-size: 17px;}
+    .coursesTrack .course-item .breif {font-size: 16px;}
+    .wrapper .title {
+        box-shadow: none
+    }
+    .wrapper .title .youtube-link {
+        bottom: 100%;
+        border-radius: 0;
+    }
+    
+}
