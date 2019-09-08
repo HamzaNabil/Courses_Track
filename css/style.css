@@ -114,13 +114,13 @@ body {
 
 .coursesTrack .course-item .course-title h2 {
     font-weight: 700;
-    font-size: 25px;
+    font-size: 22px;
     color: var(--orangeColor);
 }
 
 .coursesTrack .course-item .breif {
     color: #a1a1a1;
-    font-size: 20px;
+    font-size: 17px;
     margin-bottom: 6px;
 }
 
