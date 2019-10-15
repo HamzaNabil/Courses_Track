@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Livvic:400,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Cairo:400,900&display=swap');
 
 * , *:after , *:before{
     margin: 0;
@@ -7,27 +8,182 @@
 }
 
 :root {
-    --orangeColor: #3578E5;
+    --orangeColor: #ff6700;
     --blackColor: #1a1a1a;
-    --subColor: #ac1212;
     --whiteColor: #fff;
 }
 
 body {
     font-family: 'Livvic', sans-serif;
+    background: #e8e8e8;
 }
 
-#particles-js {
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+.new-videos-alert {
+    cursor: pointer;
     position: fixed;
+    right: 20px;
+    top: 10%;
+    color: #000;
+    z-index: 100;
+    color: var(--whiteColor);
+}
+
+.new-videos-alert .new-videos-icon {
+    display: inline-block;
+    vertical-align: middle;   
+    border: 1px solid #b73232;
+    color: white;
+    padding: 13px;
+}
+
+.new-videos-alert .new-text {
+    font-family: 'Cairo', sans-serif;
+    float: left;
+    background: #b73232;
+    padding: 10px 20px; 
+}
+
+.new-videos {
+    width: 300px;
+    position: fixed;
+    right: -335px;
+    transition: right .4s;
+    top: 18%;
+    z-index: 100;
+    height: calc(100vh - 18%);
+    padding: 10px;
+    background: #f6f6f6;
+}
+
+.new-videos.toggle {
+    right: 0;
+}
+.new-videos.hide {
+    right: -335px;
+}
+
+.new-videos .close-list {
+    position: absolute;
+    left: -33px;
+    top: 0;
+    color: #000;
+    background: #f6f6f6;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.new-videos .new-item {
     width: 100%;
-    height: 100%;
-    background: 
-        linear-gradient(rgba(66, 103, 178, 0.9) 0%, rgba(242, 243, 245, 0.8) 100%), 
-        url(../images/jesse-brack-169152.jpg) 
-        center 
-        center 
-        fixed 
-        no-repeat;
+    height: 165px;
+    margin-bottom: 10px ;
+}
+
+.new-videos .new-item img {
+    width: 100%;
+    height: 85%;
+}
+
+.new-videos .new-item .new-item-text{
+    display: block;
+    background: #fff;
+    text-align: center;
+}
+
+.new-videos .view-list {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    text-align: center;
+    background: #ff6700;
+    color: #fff;
+    width: 100%;
+    left: 0;
+    padding: 10px;
+}
+
+.home {
+    height: 100vh;
+    background-image: url('../images/home-background.jpg');
+    background-size: cover ;
+    background-position: center;
+    position: relative;
+}
+
+.home:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+}
+
+.home-content {
+    position: relative;
+    z-index: 10;
+}
+
+.home header{
+    padding: 10px 0;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home header .logo {
+    color: var(--whiteColor);
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.home header a {
+    text-decoration: none;
+    background: var(--orangeColor);
+    color: var(--whiteColor);
+    padding: 10px 20px;
+    right: 0;
+    bottom: 0;
+    font-size: 17px;
+    border-radius: 10px 0 10px 0;
+}
+
+.home .channel-track {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    width: 70%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+}
+
+.home .channel-track .track-text {
+    font-size: 55px;
+    color: var(--whiteColor);
+    font-weight: bold;
+}
+
+.home .channel-track p {
+    color: var(--whiteColor);
+    font-size: 25px;
+}
+
+
+.home .channel-track + .icon-down {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
+    color: var(--orangeColor);
+    z-index: 10;
+    cursor: pointer;
 }
 
 .wrapper {
@@ -63,7 +219,7 @@ body {
 }
 
 .wrapper .subtitle {
-    background: var(--subColor);
+    background: var(--orangeColor);
     padding: 10px;
     font-size: 20px;
     text-align: center;
@@ -102,7 +258,7 @@ body {
     transform: translate(-50% , -50%);
     background: var(--whiteColor);;
     border-radius: 50%;
-    color:var(--subColor);
+    color:var(--orangeColor);
     width: 40px;
     height: 40px;
     text-align: center;
@@ -166,6 +322,12 @@ body {
     .wrapper .title .youtube-link {
         bottom: 100%;
         border-radius: 0;
+    }
+    .home header {
+        flex-direction: column;
+    }
+    .home .channel-track .track-text {
+        font-size: 30px;
     }
     
 }
