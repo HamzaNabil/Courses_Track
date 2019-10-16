@@ -126,6 +126,28 @@ body {
     background: rgba(0,0,0,0.8);
 }
 
+.support {
+    height: auto;
+    background-image: url('../images/support.jpeg');
+    background-size: cover ;
+    background-position: center;
+    position: relative;
+}
+
+.support:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.8);
+}
+
+.support-content {
+    min-height: calc(100vh - 127px);
+}
+
 .home-content {
     position: relative;
     z-index: 10;
@@ -155,6 +177,22 @@ body {
     border-radius: 10px 0 10px 0;
 }
 
+.home header + .href-link {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 0;
+    color: #b73232;
+    background: #fff;
+    padding: 5px 20px;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.home header + .href-link:hover {
+    color: #fff;
+    background: #b73232;
+}
+
 .home .channel-track {
     position: absolute;
     top: 50%;
@@ -176,7 +214,6 @@ body {
     font-size: 25px;
 }
 
-
 .home .channel-track + .icon-down {
     position: absolute;
     bottom: 10px;
@@ -186,6 +223,34 @@ body {
     z-index: 10;
     cursor: pointer;
 }
+
+.home .support-content {
+    position: relative;
+    z-index: 15;
+    text-align: right;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+}
+
+.home .support-content .support-desc {
+    line-height: 1.6;
+    letter-spacing: 1px;
+    font-size: 20px;
+    border: 1px solid #ff6700;
+    padding: 15px;
+}
+
+.home .support-content .support-desc .normal {
+    font-weight: bold;
+    color: #ff6700;
+}
+
+.home .support-content .support-desc .voda-cash {
+    background: #b73232;
+    color: #fff;
+    padding: 0 15px;
+}
+
 
 .wrapper {
     position: relative;
