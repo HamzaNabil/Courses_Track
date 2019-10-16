@@ -193,6 +193,22 @@ body {
     background: #b73232;
 }
 
+.home header ~ .fb-link {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 0;
+    color: #fff;
+    background: #4267b2;
+    padding: 5px 20px;
+    font-size: 20px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.home header ~ .fb-link:hover {
+    color: #4267b2;
+    background: #fff;
+}
+
 .home .channel-track {
     position: absolute;
     top: 50%;
